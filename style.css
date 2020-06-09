@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    overflow: hidden; /*m umieszcza napis na dole niezależnie od rozmiaru okna*/
+}
+
+nav.desktop, header {
+    height: 360px;
+}
+
+nav.desktop {
+    float: left;
+    width: 300px;
+    background-color: seashell;
+}
+
+nav ul {
+    list-style: none; /*pozbywamy się kropek z menu*/
+
+}
+
+nav.desktop a {
+    display: block; /*zmieniamy na blokowy i mamy kontrolę nad naszym a*/
+    background-color: rgb(154, 211, 205);
+    /* szerokość nav, header podzielić przez 5 elementów w a */
+    line-height: 72px; /*wysokość każdego a*/
+    font-size: 22px;
+    text-decoration: none; /*usuwamy podkreślenia hiperłączy*/
+    font-family: arial;
+    padding: 0 5px 0 30px; /*ustawienie elementów menu*/
+}
+
+nav.desktop i {
+    width: 50px;
+    border-right: 2px solid black; /*kreseczki przy napisach menu*/
+    margin-right: 30px; /*oddalenie tekstu od kreseczek*/
+    transition: .5s; /*animacja tekstu menu*/
+
+}
+
+nav.desktop a:hover i { /*weź i które jest w a które jest w nav*/
+    margin-right: 50px; /*tekst menu przesuwa się po najechaniu*/
+    color: rgb(255, 175, 2); /*zmiana koloru po najechania; czas zmiany taki sam jak w transition*/
+    /* background-color: rgb(112, 112, 133); zmiana koloru po najechaniu */
+}
+
+header {
+    float: left;
+    width: calc(100% - 300px);
+    background-image: url(merida.jpg);
+    background-size: cover;/*sprawia że zdjęcie jest jak najmniej ucinane*/
+    /* background-repeat: no-repeat; */
+    background-position: center center;/*najważniejszy robi się środek zdjęcia*/ 
+}
+
+section  {
+    margin-top: 50px;
+}
+section h1 {
+    font-size: 40px;
+    font-family: arial;
+    background-color: rgb(86, 165, 230);
+    color: whitesmoke;
+    padding: 15px 0;
+    text-align: center;
+} 
+
+
+nav.mobile {
+    display: none;
+}
+ @media (max-width: 1024px) {
+     nav.desktop {
+         display: none;
+     }
+     
+     nav.mobile {
+         position: fixed;
+         display: block;
+         width: 72px;
+         height: 100%;
+         background-color: rgb(154, 211, 205);
+         color: white;
+
+     }
+
+     nav.mobile a {
+         display: block;
+         line-height: 10vh;
+         color: white;
+         font-size: 30px;
+         text-align: center;
+         
+
+     }
+
+     nav.mobile a:hover {
+         color: rgb(255, 175, 2);
+     }
+
+     nav.mobile li:nth-child(1) a:hover {
+         color: black;
+     }
+
+     nav.mobile li:nth-child(2) a:hover {
+         color: red;
+     } 
+
+     nav.mobile li:nth-child(3) a:hover {
+         color: yellow;
+     } 
+
+     nav.mobile li:nth-child(4) a:hover {
+         color: greenyellow;
+     } 
+
+     nav.mobile li:nth-child(5) a:hover {
+         color: blue;
+     } 
+
+     header {
+         width: 100%;
+     }
+ }
